@@ -34,7 +34,7 @@ export interface SearchItem {
                 "height": number
             }
         },
-        "channelTitle": "Владилен Минин",
+        "channelTitle": string,
         "tags": string[],
         "categoryId": string,
         "liveBroadcastContent": string,
