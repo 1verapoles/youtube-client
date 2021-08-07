@@ -7,6 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'youtube';
-  isFormSubmitted = true;
-  isFiltering = true;
+  isFormSubmitted = false;
+  isFiltering = false;
+
+  formSubmitted() {
+    if (this.isFormSubmitted === false) { this.isFormSubmitted = true; }
+  }
+
+  filterClicked() {
+    this.isFiltering = !this.isFiltering;
+  }
 }

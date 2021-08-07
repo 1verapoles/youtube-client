@@ -7,9 +7,9 @@
           <img src="../../assets/logo.png" alt="logo" class="header-logo">
         <form class="header-form">
               <input class="header-i" matInput placeholder="Kuji Podcast">
-            <button mat-button class="header-s">search</button>
+            <button mat-button class="header-s" (click)="onSubmit($event)">search</button>
           </form>
-          <button mat-button class="header-btn"></button>
+          <button mat-button class="header-btn" (click)="onFilterClicked()"></button>
       </div>
     </mat-toolbar>
   

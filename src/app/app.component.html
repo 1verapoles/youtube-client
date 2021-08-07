@@ -1,5 +1,5 @@
 <div class="container">
-<app-header></app-header>
+<app-header (onFormSubmit)="formSubmitted()" (onFilterClick)="filterClicked()"></app-header>
 <app-filtering-block *ngIf="isFiltering"></app-filtering-block>
 <app-search-results *ngIf="isFormSubmitted"></app-search-results>
 </div>

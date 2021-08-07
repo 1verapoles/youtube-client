@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  @Output() onFormSubmit = new EventEmitter();
+  @Output() onFilterClick = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(e: any) {
+    e.preventDefault();
+    this.onFormSubmit.emit();
+  }
+
+  onFilterClicked() {
+    this.onFilterClick.emit();
   }
 
 }
