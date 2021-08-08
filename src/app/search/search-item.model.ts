@@ -45,10 +45,10 @@ export interface SearchItem {
         "defaultAudioLanguage": string
     },
     "statistics": {
-        "viewCount": string,
-        "likeCount": string,
-        "dislikeCount": string,
-        "favoriteCount": string,
-        "commentCount": string
+        "viewCount"?: string,
+        "likeCount"?: string,
+        "dislikeCount"?: string,
+        "favoriteCount"?: string,
+        "commentCount"?: string
     }
 }

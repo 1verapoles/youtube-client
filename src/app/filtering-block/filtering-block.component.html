@@ -1,9 +1,9 @@
 <div class="filtering-block">
     <div class="sort">
         <span class="sort-block">Sorting by:</span>
-        <button class="sort-btn">date</button>
-        <button class="sort-btn">count of views</button>
+        <button class="sort-btn" (click)="onDateChange()">date</button><span class="sort-span" *ngIf="dateTermF === true"> &uarr;</span><span class="sort-span" *ngIf="dateTermF === false"> &darr;</span>
+        <button class="sort-btn" (click)="onViewsChange()">count of views </button><span class="sort-span" *ngIf="viewsTermF === true"> &uarr;</span><span class="sort-span" *ngIf="viewsTermF === false"> &darr;</span>
     </div>
-    <label class="filter-label"> by word or sentance<input class="filter-input" type="text"></label>
+    <div><label class="filter-label"> by word or sentance<input class="filter-input" #box type="text" (keyup)="onFilterChange(box.value)"></label></div>
 
 </div>

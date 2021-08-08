@@ -1,5 +1,5 @@
 <div class="container">
 <app-header (onFormSubmit)="formSubmitted()" (onFilterClick)="filterClicked()"></app-header>
-<app-filtering-block *ngIf="isFiltering"></app-filtering-block>
-<app-search-results *ngIf="isFormSubmitted"></app-search-results>
+<app-filtering-block *ngIf="isFiltering" (onFilterChanged)="changeFilterTerm($event)" (onViewsChanged)="changeViewsTerm()" (onDateChanged)="changeDateTerm()" [viewsTermF]="viewsTerm" [dateTermF]="dateTerm"></app-filtering-block>
+<app-search-results *ngIf="isFormSubmitted" [filterTerm]="filterTerm" [viewsTerm]="viewsTerm" [dateTerm]="dateTerm"></app-search-results>
 </div>

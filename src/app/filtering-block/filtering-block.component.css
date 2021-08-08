@@ -13,8 +13,15 @@
     border: 0;
     background: transparent;
     text-decoration: underline;
-    margin-right: 21px;
     cursor: pointer;
+    margin-left: 11px;
+}
+
+.sort-span {
+   color: #2F80ED;
+    font-size: 11px;
+    line-height: 12px;
+    font-weight: 700;
 }
 
 .sort-block {
@@ -48,6 +55,7 @@
     line-height: 14px;
     color: #2F80ED;
     cursor: pointer;
+    margin-left: 10px;
 }
 
 @media screen and (max-width: 575px) {

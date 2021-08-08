@@ -1,7 +1,9 @@
-    <app-search-item *ngFor="let item of searchItems.items" 
+    <app-search-item *ngFor="let item of searchItems.items | filterItems : filterTerm | sortViews : viewsTerm | sortDate : dateTerm" 
         [videoThumbnail]="item.snippet.thumbnails.medium.url"
         [videoTitle]="item.snippet.title"
         [viewsCount]="item.statistics.viewCount"
         [likeCount]="item.statistics.likeCount"
         [dislikeCount]="item.statistics.dislikeCount"
-        [commentCount]="item.statistics.commentCount"></app-search-item>
+        [commentCount]="item.statistics.commentCount"
+        [publishedAt]="item.snippet.publishedAt"
+        appBorder></app-search-item>

@@ -13,6 +13,7 @@ export class SearchItemComponent implements OnInit {
   @Input() likeCount = '';
   @Input() dislikeCount = '';
   @Input() commentCount = '';
+  @Input() publishedAt = '';
 
   constructor() { }
 

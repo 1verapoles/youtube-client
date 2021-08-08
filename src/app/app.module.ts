@@ -10,6 +10,10 @@ import { SearchResultsComponent } from './search/search-results/search-results.c
 import { SearchItemComponent } from './search/search-item/search-item.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FilteringBlockComponent } from './filtering-block/filtering-block.component';
+import { BorderDirective } from './search/search-results/border.directive';
+import { FilterItemsPipe } from './search/search-results/filter-items.pipe';
+import { SortViewsPipe } from './search/search-results/sort-views.pipe';
+import { SortDatePipe } from './search/search-results/sort-date.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { FilteringBlockComponent } from './filtering-block/filtering-block.compo
     HeaderComponent,
     SearchResultsComponent,
     SearchItemComponent,
-    FilteringBlockComponent
+    FilteringBlockComponent,
+    BorderDirective,
+    FilterItemsPipe,
+    SortViewsPipe,
+    SortDatePipe
   ],
   imports: [
     BrowserModule,
