@@ -1,3 +1,17 @@
+interface IThumbnail {
+    "url": string,
+    "width": number,
+    "height": number
+}
+
+interface IStatistics {
+    "viewCount": string,
+    "likeCount": string,
+    "dislikeCount": string,
+    "favoriteCount": string,
+    "commentCount": string
+}
+
 export interface SearchItem {
     "kind": string,
     "etag": string,
@@ -8,31 +22,11 @@ export interface SearchItem {
         "title": string,
         "description": string,
         "thumbnails": {
-            "default": {
-                "url": string,
-                "width": number,
-                "height": number
-            },
-            "medium": {
-                "url": string,
-                "width": number,
-                "height": number
-            },
-            "high": {
-                "url": string,
-                "width": number,
-                "height": number
-            },
-            "standard": {
-                "url": string,
-                "width": number,
-                "height": number
-            },
-            "maxres": {
-                "url": string,
-                "width": number,
-                "height": number
-            }
+            "default": IThumbnail,
+            "medium": IThumbnail,
+            "high": IThumbnail,
+            "standard": IThumbnail,
+            "maxres": IThumbnail
         },
         "channelTitle": string,
         "tags": string[],
@@ -44,11 +38,5 @@ export interface SearchItem {
         },
         "defaultAudioLanguage": string
     },
-    "statistics": {
-        "viewCount"?: string,
-        "likeCount"?: string,
-        "dislikeCount"?: string,
-        "favoriteCount"?: string,
-        "commentCount"?: string
-    }
+    "statistics": IStatistics
 }

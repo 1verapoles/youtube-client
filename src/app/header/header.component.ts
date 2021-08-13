@@ -5,17 +5,13 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
-  @Output() onFormSubmit = new EventEmitter();
-  @Output() onFilterClick = new EventEmitter();
-  constructor() { }
+  @Output() onFormSubmit = new EventEmitter<void>();
+  @Output() onFilterClick = new EventEmitter<void>();
 
-  ngOnInit(): void {
-  }
-
-  onSubmit(e: any) {
-    e.preventDefault();
+  onSubmit(event: any) {
+    event.preventDefault();
     this.onFormSubmit.emit();
   }
 

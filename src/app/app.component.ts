@@ -6,15 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'youtube';
-  isFormSubmitted = false;
-  isFiltering = false;
+  title: string = 'youtube';
+  isFormSubmitted: boolean = false;
+  isFiltering: boolean = false;
   filterTerm: undefined | string = undefined;
   viewsTerm: undefined | boolean = undefined;
   dateTerm: undefined | boolean = undefined;
 
   formSubmitted() {
-    if (this.isFormSubmitted === false) { this.isFormSubmitted = true; }
+    if (!this.isFormSubmitted) { this.isFormSubmitted = true; }
   }
 
   filterClicked() {

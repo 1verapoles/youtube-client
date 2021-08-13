@@ -7,15 +7,10 @@ import itemsResponse from '../../../assets/response.json';
   templateUrl: './search-results.component.html',
   styleUrls: ['./search-results.component.css']
 })
-export class SearchResultsComponent implements OnInit {
+export class SearchResultsComponent {
 
   searchItems: SearchResponse = itemsResponse;
   @Input() filterTerm: undefined | string = undefined;
   @Input() viewsTerm: undefined | boolean = undefined;
   @Input() dateTerm: undefined | boolean = undefined;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 }

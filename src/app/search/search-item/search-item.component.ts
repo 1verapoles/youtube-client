@@ -5,19 +5,14 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './search-item.component.html',
   styleUrls: ['./search-item.component.css']
 })
-export class SearchItemComponent implements OnInit {
+export class SearchItemComponent {
 
-  @Input() videoThumbnail = '';
-  @Input() videoTitle = '';
-  @Input() viewsCount = '';
-  @Input() likeCount = '';
-  @Input() dislikeCount = '';
-  @Input() commentCount = '';
-  @Input() publishedAt = '';
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  @Input() videoThumbnail: string = '';
+  @Input() videoTitle: string = '';
+  @Input() viewsCount: string = '';
+  @Input() likeCount: string = '';
+  @Input() dislikeCount: string = '';
+  @Input() commentCount: string = '';
+  @Input() publishedAt: string = '';
 
 }
