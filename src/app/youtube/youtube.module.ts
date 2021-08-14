@@ -12,6 +12,7 @@ import { CoreModule } from '../core/core.module';
 import { SearchItemComponent } from './components/search-item/search-item.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { DetailsComponent } from './components/details/details.component';
+import { Border2Directive } from './directives/border2.directive';
 //import { YoutubeService } from './services/youtube.service';
 
 
@@ -21,6 +22,7 @@ import { DetailsComponent } from './components/details/details.component';
     SearchItemComponent,
     SearchResultsComponent,
     BorderDirective,
+    Border2Directive,
     FilterItemsPipe,
     SortViewsPipe,
     SortDatePipe,

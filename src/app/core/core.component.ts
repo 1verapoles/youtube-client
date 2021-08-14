@@ -8,9 +8,10 @@ import { YoutubeService } from '../youtube/services/youtube.service';
 })
 export class CoreComponent {
 
-  //isFormSubmitted: boolean = this.youtubeService.isFormSubmitted;
-  isFiltering: boolean = this.youtubeService.isFiltering;
+  get isFiltering(): boolean {
+    return this.youtubeService.isFiltering;
+  }
 
-  constructor(private youtubeService: YoutubeService) { console.log('888', this.isFiltering); }
+  constructor(private youtubeService: YoutubeService) { }
 
 }

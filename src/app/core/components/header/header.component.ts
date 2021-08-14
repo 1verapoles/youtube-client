@@ -12,12 +12,10 @@ export class HeaderComponent {
 
   onSubmit(event: any) {
     event.preventDefault();
-    console.log(1);
     this.youtubeService.formSubmitted();
   }
 
   onFilterClicked() {
-    console.log(3);
     this.youtubeService.filterClicked();
   }
 

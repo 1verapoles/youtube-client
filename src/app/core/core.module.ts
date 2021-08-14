@@ -8,6 +8,7 @@ import { CoreComponent } from './core.component';
 import { ErrorComponent } from './components/error/error.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FilteringBlockComponent } from './components/filtering-block/filtering-block.component';
+//import { RouterGuard } from './guards/router.guard';
 
 
 @NgModule({

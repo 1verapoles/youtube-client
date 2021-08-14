@@ -1,0 +1,10 @@
+<div class="login-wrapper">
+    <div class="login-form">
+      <h1 class="login-h1">Login</h1>
+      <label class="login-label" for="login">login</label>
+      <input type="text" class="login-input" #login (keyup)="onLoginChange(login.value)">
+      <label class="login-label" for="password">password</label>
+      <input type="password" class="login-input" #password (keyup)="onPasswordChange(password.value)">
+      <button class="login-btn"  (click)="onSubmit()">Login</button>
+    </div>
+</div>

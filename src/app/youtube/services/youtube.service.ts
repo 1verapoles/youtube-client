@@ -16,12 +16,10 @@ export class YoutubeService {
 
   formSubmitted() {
     if (!this.isFormSubmitted) { this.isFormSubmitted = true; }
-    console.log(2, this.isFormSubmitted);
   }
 
   filterClicked() {
     this.isFiltering = !this.isFiltering;
-    console.log(4, this.isFiltering);
   }
 
   changeFilterTerm(term: string) {
