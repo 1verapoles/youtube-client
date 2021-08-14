@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginService } from 'src/app/auth/services/login.service';
 import { YoutubeService } from 'src/app/youtube/services/youtube.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { YoutubeService } from 'src/app/youtube/services/youtube.service';
 })
 export class HeaderComponent {
 
-  constructor(private youtubeService: YoutubeService) { }
+  constructor(private youtubeService: YoutubeService, private loginService: LoginService) { }
 
   onSubmit(event: any) {
     event.preventDefault();
@@ -17,6 +18,10 @@ export class HeaderComponent {
 
   onFilterClicked() {
     this.youtubeService.filterClicked();
+  }
+
+  onLogout() {
+    this.loginService.onLogout();
   }
 
 }

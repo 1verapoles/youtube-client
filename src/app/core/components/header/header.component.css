@@ -16,6 +16,12 @@
     margin-right: 10px;
 }
 
+.header-logout {
+    margin-left: 10px;
+    margin-top: -5px;
+    cursor: pointer;
+}
+
 .login-name {
     margin-right: 10px;
     font-size: 12px;

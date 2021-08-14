@@ -32,4 +32,9 @@ export class LoginService {
     }
   }
 
+  onLogout() {
+    if (localStorage.getItem('auth')) { localStorage.removeItem('auth'); }
+    this.router.navigate(['/auth']);
+  }
+
 }
