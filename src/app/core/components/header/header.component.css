@@ -37,7 +37,7 @@
 .header-btn {
     width: 24px;
     height: 24px;
-    background: url("../../assets/search.png")  no-repeat top center /cover;
+    background: url("../../../../assets/search.png")  no-repeat top center /cover;
     border: 0;
     margin-left: 10px;
     cursor: pointer;

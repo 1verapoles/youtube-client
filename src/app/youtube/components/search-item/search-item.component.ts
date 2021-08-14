@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SearchItemComponent {
 
+
   @Input() videoThumbnail: string = '';
   @Input() videoTitle: string = '';
   @Input() viewsCount: string = '';
@@ -14,5 +15,6 @@ export class SearchItemComponent {
   @Input() dislikeCount: string = '';
   @Input() commentCount: string = '';
   @Input() publishedAt: string = '';
+  @Input() id: string = '';
 
 }
