@@ -1,16 +1,16 @@
 <app-header></app-header>
 <div class="card-temp">
-    <img class="card-im" [src]="videoThumbnail" [alt]="videoTitle"> 
-    <div class="card-text" appBorder2 [publishedAt]="publishedAt">
-      <div class="card-tit">{{videoTitle}}</div>
-      <div class="card-gr">{{publishedAt | date:'EEEE, MMMM d, y'}}</div>
+    <img class="card-im" [src]="currentSearchItem.snippet.thumbnails.medium.url" [alt]="currentSearchItem.snippet.title"> 
+    <div class="card-text" appBorder2 [publishedAt]="currentSearchItem.snippet.publishedAt">
+      <div class="card-tit">{{currentSearchItem.snippet.title}}</div>
+      <div class="card-gr">{{currentSearchItem.snippet.publishedAt | date:'EEEE, MMMM d, y'}}</div>
       <div class="card-desct">Description:</div>
-      <div class="card-desc">{{description}}</div>
+      <div class="card-desc">{{currentSearchItem.snippet.description}}</div>
       <div class="card-dat">
-        <div class="card-i"><img src="../../../assets/viewed.png" alt="views"><span class="card-sp">{{viewsCount}}</span></div> 
-        <div class="card-i"><img src="../../../assets/liked.png" alt="like"><span class="card-sp">{{likeCount}}</span></div>
-        <div class="card-i"><img src="../../../assets/dislike.png" alt="dislike"><span class="card-sp">{{dislikeCount}}</span></div>
-        <div class="card-i"><img src="../../../assets/comment.png" alt="comment"><span class="card-sp">{{commentCount}}</span></div>
+        <div class="card-i"><img src="../../../assets/viewed.png" alt="views"><span class="card-sp">{{currentSearchItem.statistics.viewCount}}</span></div> 
+        <div class="card-i"><img src="../../../assets/liked.png" alt="like"><span class="card-sp">{{currentSearchItem.statistics.likeCount}}</span></div>
+        <div class="card-i"><img src="../../../assets/dislike.png" alt="dislike"><span class="card-sp">{{currentSearchItem.statistics.dislikeCount}}</span></div>
+        <div class="card-i"><img src="../../../assets/comment.png" alt="comment"><span class="card-sp">{{currentSearchItem.statistics.commentCount}}</span></div>
         </div>  
     </div> 
 </div>

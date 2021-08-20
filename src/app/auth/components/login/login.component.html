@@ -1,10 +1,12 @@
 <div class="login-wrapper">
     <div class="login-form">
       <h1 class="login-h1">Login</h1>
+      <form #myForm="ngForm" novalidate>
       <label class="login-label" for="login">login</label>
-      <input type="text" class="login-input" #login (keyup)="onLoginChange(login.value)">
+      <input type="text" class="login-input" name="login" [ngModel]="login" required>
       <label class="login-label" for="password">password</label>
-      <input type="password" class="login-input" #password (keyup)="onPasswordChange(password.value)">
-      <button class="login-btn"  (click)="onSubmit()">Login</button>
+      <input type="password" class="login-input" name="password" [ngModel]="password" required>
+      <button type="submit" class="login-btn" (click)="onSubmit(myForm)">Login</button>
+    </form>
     </div>
 </div>

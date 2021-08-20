@@ -6,9 +6,9 @@ import { SearchItem } from '../models/search-item.model';
 })
 export class FilterItemsPipe implements PipeTransform {
 
-  transform(items: SearchItem[], term: string | undefined): SearchItem[] {
-    if (term === undefined) { return items; }
-    return items.filter(function (item) { return item.snippet.title.toLowerCase().includes(term.toLowerCase()); });
+  transform(items: SearchItem[], filterBy: string | undefined): SearchItem[] {
+    if (filterBy === undefined) { return items; }
+    return items.filter(function (item) { return item.snippet.title.toLowerCase().includes(filterBy.toLowerCase()); });
   }
 
 }

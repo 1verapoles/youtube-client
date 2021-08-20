@@ -6,8 +6,6 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class LoginService {
-  loginValue: undefined | string = undefined;
-  passwordValue: undefined | string = undefined;
 
   constructor(private router: Router) { }
 
@@ -15,16 +13,8 @@ export class LoginService {
     localStorage.setItem('auth', uuidv4());
   }
 
-  onLoginChange(inputValue: string) {
-    this.loginValue = inputValue;
-  }
-
-  onPasswordChange(inputValue: string) {
-    this.passwordValue = inputValue;
-  }
-
-  onSubmit() {
-    if (this.loginValue && this.passwordValue) {
+  onSubmit(formIsFilledIn: boolean) {
+    if (formIsFilledIn) {
       this.createAuthtoken();
       this.router.navigate(['/youtube']);
     } else {

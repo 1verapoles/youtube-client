@@ -15,16 +15,16 @@ export class SearchResultsComponent {
     return this.youtubeService.searchItems;
   }
 
-  get filterTerm(): undefined | string {
-    return this.youtubeService.filterTerm;
+  get filterBy(): undefined | string {
+    return this.youtubeService.filterBy;
   }
 
-  get viewsTerm(): undefined | boolean {
-    return this.youtubeService.viewsTerm;
+  get sortOrderViews(): undefined | boolean {
+    return this.youtubeService.sortOrderViews;
   }
 
-  get dateTerm(): undefined | boolean {
-    return this.youtubeService.dateTerm;
+  get sortOrderDate(): undefined | boolean {
+    return this.youtubeService.sortOrderDate;
   }
 
 }

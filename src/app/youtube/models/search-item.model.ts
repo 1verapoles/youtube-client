@@ -12,31 +12,37 @@ interface IStatistics {
     "commentCount": string
 }
 
+interface IThumbnails {
+    "default": IThumbnail,
+    "medium": IThumbnail,
+    "high": IThumbnail,
+    "standard": IThumbnail,
+    "maxres": IThumbnail
+}
+
+interface ILocalized {
+    "title": string,
+    "description": string
+}
+
+interface ISnippet {
+    "publishedAt": string,
+    "channelId": string,
+    "title": string,
+    "description": string,
+    "thumbnails": IThumbnails,
+    "channelTitle": string,
+    "tags": string[],
+    "categoryId": string,
+    "liveBroadcastContent": string,
+    "localized": ILocalized,
+    "defaultAudioLanguage": string
+}
+
 export interface SearchItem {
     "kind": string,
     "etag": string,
     "id": string,
-    "snippet": {
-        "publishedAt": string,
-        "channelId": string,
-        "title": string,
-        "description": string,
-        "thumbnails": {
-            "default": IThumbnail,
-            "medium": IThumbnail,
-            "high": IThumbnail,
-            "standard": IThumbnail,
-            "maxres": IThumbnail
-        },
-        "channelTitle": string,
-        "tags": string[],
-        "categoryId": string,
-        "liveBroadcastContent": string,
-        "localized": {
-            "title": string,
-            "description": string
-        },
-        "defaultAudioLanguage": string
-    },
+    "snippet": ISnippet,
     "statistics": IStatistics
 }

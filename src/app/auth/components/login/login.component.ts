@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
 
 @Component({
@@ -10,17 +11,15 @@ export class LoginComponent {
 
   constructor(private loginService: LoginService) { }
 
+  login: string = '';
+  password: string = '';
 
-  onLoginChange(inputValue: string) {
-    this.loginService.onLoginChange(inputValue);
-  }
-
-  onPasswordChange(inputValue: string) {
-    this.loginService.onPasswordChange(inputValue);
-  }
-
-  onSubmit() {
-    this.loginService.onSubmit();
+  onSubmit(form: NgForm) {
+    if (form.value.login.trim() && form.value.password.trim()) {
+      this.loginService.onSubmit(true);
+    } else {
+      this.loginService.onSubmit(false);
+    }
   }
 
 }

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { SearchItem } from '../../models/search-item.model';
 import { SearchResponse } from '../../models/search-response.model';
+import { SearchItemModel } from '../../SearchItemModel';
 import { YoutubeService } from '../../services/youtube.service';
 
 @Component({
@@ -11,34 +13,19 @@ import { YoutubeService } from '../../services/youtube.service';
 })
 export class DetailsComponent implements OnInit {
 
-  id: string = '';
-  videoThumbnail: string = '';
-  videoTitle: string = '';
-  viewsCount: string = '';
-  description: string = '';
-  likeCount: string = '';
-  dislikeCount: string = '';
-  commentCount: string = '';
-  publishedAt: string = '';
+  currentSearchItem: SearchItem = new SearchItemModel();
 
   constructor(private youtubeService: YoutubeService, private router: Router, private route: ActivatedRoute) {
-    route.params.subscribe(params => this.id = params['id']);
+    route.params.subscribe(params => this.currentSearchItem.id = params['id']);
   }
 
   ngOnInit(): void {
-    const data = this.searchItems.items.find(item => item.id === this.id);
-    if (!data) {
+    const searchedItemById = this.searchItems.items.find(item => item.id === this.currentSearchItem.id);
+    if (!searchedItemById) {
       this.router.navigate(['/**']);
       return;
     } else {
-      this.videoThumbnail = data?.['snippet']?.['thumbnails']?.['medium']?.['url'];
-      this.videoTitle = data?.['snippet']?.['title'];
-      this.description = data?.['snippet']?.['description'];
-      this.viewsCount = data?.['statistics']?.['viewCount'];
-      this.likeCount = data?.['statistics']?.['likeCount'];
-      this.dislikeCount = data?.['statistics']?.['dislikeCount'];
-      this.commentCount = data?.['statistics']?.['commentCount'];
-      this.publishedAt = data?.['snippet']?.['publishedAt'];
+      this.currentSearchItem = searchedItemById;
     }
   }
 

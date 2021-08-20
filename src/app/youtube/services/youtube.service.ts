@@ -10,9 +10,9 @@ export class YoutubeService {
   searchItems: SearchResponse = itemsResponse;
   isFormSubmitted: boolean = false;
   isFiltering: boolean = false;
-  filterTerm: undefined | string = undefined;
-  viewsTerm: undefined | boolean = undefined;
-  dateTerm: undefined | boolean = undefined;
+  filterBy: undefined | string = undefined;
+  sortOrderViews: undefined | boolean = undefined;
+  sortOrderDate: undefined | boolean = undefined;
 
   formSubmitted() {
     if (!this.isFormSubmitted) { this.isFormSubmitted = true; }
@@ -22,17 +22,17 @@ export class YoutubeService {
     this.isFiltering = !this.isFiltering;
   }
 
-  changeFilterTerm(term: string) {
-    this.filterTerm = term;
+  changeFilterBy(inputValue: string) {
+    this.filterBy = inputValue;
   }
 
-  changeViewsTerm() {
-    if (this.viewsTerm === undefined) { this.viewsTerm = true; }
-    this.viewsTerm = !this.viewsTerm;
+  changeSortOrderViews() {
+    if (this.sortOrderViews === undefined) { this.sortOrderViews = true; }
+    this.sortOrderViews = !this.sortOrderViews;
   }
 
-  changeDateTerm() {
-    if (this.dateTerm === undefined) { this.dateTerm = true; }
-    this.dateTerm = !this.dateTerm;
+  changeSortOrderDate() {
+    if (this.sortOrderDate === undefined) { this.sortOrderDate = true; }
+    this.sortOrderDate = !this.sortOrderDate;
   }
 }

@@ -7,26 +7,26 @@ import { YoutubeService } from 'src/app/youtube/services/youtube.service';
   styleUrls: ['./filtering-block.component.css']
 })
 export class FilteringBlockComponent {
-  get viewsTerm(): undefined | boolean {
-    return this.youtubeService.viewsTerm;
+  get sortOrderViews(): undefined | boolean {
+    return this.youtubeService.sortOrderViews;
   }
 
-  get dateTerm(): undefined | boolean {
-    return this.youtubeService.dateTerm;
+  get sortOrderDate(): undefined | boolean {
+    return this.youtubeService.sortOrderDate;
   }
 
   constructor(private youtubeService: YoutubeService) { }
 
   onFilterChange(inputValue: string) {
-    this.youtubeService.changeFilterTerm(inputValue);
+    this.youtubeService.changeFilterBy(inputValue);
   }
 
   onViewsChange() {
-    this.youtubeService.changeViewsTerm();
+    this.youtubeService.changeSortOrderViews();
   }
 
   onDateChange() {
-    this.youtubeService.changeDateTerm();
+    this.youtubeService.changeSortOrderDate();
   }
 
 }
