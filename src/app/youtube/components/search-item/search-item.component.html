@@ -1,0 +1,12 @@
+<mat-card class="example-card card-temp">
+        <img class="card-im" [src]="currentSearchItem.snippet.thumbnails.medium.url" [alt]="currentSearchItem.snippet.title"> 
+        <div class="card-dat">
+        <div class="card-i"><img src="../../../assets/viewed.png" alt="views"><span class="card-sp">{{currentSearchItem.statistics.viewCount}}</span></div> 
+        <div class="card-i"><img src="../../../assets/liked.png" alt="like"><span class="card-sp">{{currentSearchItem.statistics.likeCount}}</span></div>
+        <div class="card-i"><img src="../../../assets/dislike.png" alt="dislike"><span class="card-sp">{{currentSearchItem.statistics.dislikeCount}}</span></div>
+        <div class="card-i"><img src="../../../assets/comment.png" alt="comment"><span class="card-sp">{{currentSearchItem.statistics.commentCount}}</span></div>
+        </div>   
+        <mat-card-title class="card-tit">{{currentSearchItem.snippet.title | slice:0:20}}</mat-card-title>
+      <button class="card-btn" mat-button routerLink="/youtube/{{currentSearchItem.id}}">more...</button>
+  </mat-card>
+  

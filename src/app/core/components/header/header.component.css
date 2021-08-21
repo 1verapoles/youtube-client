@@ -1,0 +1,95 @@
+.login, .header-search, .header-form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.login {
+    margin-left: 70px;
+}
+
+.mat-toolbar {
+    background: #e5e5e5;
+}
+
+.header-logo {
+    margin-right: 10px;
+}
+
+.header-logout {
+    margin-left: 10px;
+    margin-top: -5px;
+    cursor: pointer;
+}
+
+.login-name {
+    margin-right: 10px;
+    font-size: 12px;
+    line-height: 14px;
+    color: #4f4f4f;
+}
+
+.header-i {
+    width: 396px;
+    height: 24px;
+    background: #EFEFEF;
+    font-size: 12px;
+    line-height: 14px;
+    color: #333;
+    padding: 5px;
+    border: 0;
+}
+
+.header-btn {
+    width: 24px;
+    height: 24px;
+    background: url("../../../../assets/search.png")  no-repeat top center /cover;
+    border: 0;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.header-s {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 24px;
+    background: #2F80ED;
+    color: #fff;
+    font-size: 12px;
+    line-height: 14px;
+    border: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+    flex-direction: row-reverse !important;
+    flex-wrap: wrap;
+    height: auto !important;
+    min-height: 80px;
+}
+
+@media screen and (max-width: 991px) {
+    .header-i {
+        width: 200px;
+    }
+
+    .header-s {
+        width: 45px;
+    }
+
+    .header-search {
+        flex-basis: 100%;
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+
+    .login {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+    }
+}
