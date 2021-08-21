@@ -8,7 +8,7 @@ import { YoutubeService } from './services/youtube.service';
 })
 export class YoutubeComponent {
 
-  constructor(private youtubeService: YoutubeService) { }
+  constructor(public youtubeService: YoutubeService) { }
 
 
   get isFiltering(): boolean {

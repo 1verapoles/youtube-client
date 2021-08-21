@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { SearchItem } from '../../models/search-item.model';
-import { SearchResponse } from '../../models/search-response.model';
 import { SearchItemModel } from '../../SearchItemModel';
 import { YoutubeService } from '../../services/youtube.service';
 
@@ -17,22 +16,20 @@ export class DetailsComponent implements OnInit {
 
   constructor(private youtubeService: YoutubeService, private router: Router, private route: ActivatedRoute) {
     route.params.subscribe(params => this.currentSearchItem.id = params['id']);
+
   }
 
   ngOnInit(): void {
-    const searchedItemById = this.searchItems.items.find(item => item.id === this.currentSearchItem.id);
-    if (!searchedItemById) {
-      this.router.navigate(['/**']);
-      return;
-    } else {
-      this.currentSearchItem = searchedItemById;
-    }
+    this.youtubeService.getItems(`videos?id=${this.currentSearchItem.id}&part=snippet, statistics`)
+      .subscribe((data: any) => {
+        if (!data.items[0].snippet.title) {
+          this.router.navigate(['/**']);
+          return;
+        } else {
+          this.currentSearchItem = data.items[0];
+        }
+      });
   }
-
-  get searchItems(): SearchResponse {
-    return this.youtubeService.searchItems;
-  }
-
 
 
 }

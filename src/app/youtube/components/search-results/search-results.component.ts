@@ -9,11 +9,7 @@ import { YoutubeService } from '../../services/youtube.service';
 })
 export class SearchResultsComponent {
 
-  constructor(private youtubeService: YoutubeService) { }
-
-  get searchItems(): SearchResponse {
-    return this.youtubeService.searchItems;
-  }
+  constructor(public youtubeService: YoutubeService) { }
 
   get filterBy(): undefined | string {
     return this.youtubeService.filterBy;
