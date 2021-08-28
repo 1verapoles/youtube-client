@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { LoginService } from 'src/app/auth/services/login.service';
 import { YoutubeService } from 'src/app/youtube/services/youtube.service';
+import { Store } from '@ngrx/store';
 import { Observable, fromEvent, pipe } from 'rxjs';
-import { debounceTime, distinctUntilChanged, filter, map, switchMap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, switchMap, take } from 'rxjs/operators';
 import { INPUT_MIN_CHARACTERS } from '../../constants';
+import { addSearchCards } from 'src/app/redux/actions';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +14,7 @@ import { INPUT_MIN_CHARACTERS } from '../../constants';
 })
 export class HeaderComponent {
 
-  constructor(private youtubeService: YoutubeService, public loginService: LoginService) { }
+  constructor(private youtubeService: YoutubeService, public loginService: LoginService, private store: Store) { }
 
   onKeyUp(e: any): void {
     fromEvent(e.target, 'keyup')
@@ -22,13 +24,14 @@ export class HeaderComponent {
         filter((query: string) => query.length >= INPUT_MIN_CHARACTERS),
         debounceTime(2000),
         distinctUntilChanged(),
+        //take(1),
         switchMap(input => this.youtubeService.getItems(`search?type=video&part=snippet&maxResults=15&q=${input}`)),
         switchMap((data: any) => {
           let allIds = data.items.map((item: any) => item.id.videoId).toString();
           return this.youtubeService.getItems(`videos?id=${allIds}&part=snippet, statistics`);
         }),
-      ).subscribe((data) => {
-        this.youtubeService.changeSearchItems(data);
+      ).subscribe((data: any) => {
+        this.store.dispatch(addSearchCards(data));
       });
   }
 

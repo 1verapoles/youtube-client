@@ -13,7 +13,6 @@ import { SearchItemComponent } from './components/search-item/search-item.compon
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { DetailsComponent } from './components/details/details.component';
 import { Border2Directive } from './directives/border2.directive';
-//import { YoutubeService } from './services/youtube.service';
 
 
 @NgModule({
@@ -33,7 +32,6 @@ import { Border2Directive } from './directives/border2.directive';
     MatCardModule,
     CoreModule,
     YoutubeRoutingModule
-  ],
-  //providers: [YoutubeService]
+  ]
 })
 export class YoutubeModule { }

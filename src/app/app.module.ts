@@ -8,6 +8,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { YoutubeInterceptor } from './core/interceptors/youtube.interceptor';
 import { environment } from 'src/environments/environment';
+import { AdminModule } from './admin/admin.module';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './redux/reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +20,12 @@ import { environment } from 'src/environments/environment';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    CoreModule
+    CoreModule,
+    AdminModule,
+    StoreModule.forRoot({ youtube: reducer }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25
+    })
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: YoutubeInterceptor, multi: true },
