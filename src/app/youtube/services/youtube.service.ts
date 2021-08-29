@@ -1,18 +1,36 @@
 import { Injectable } from '@angular/core';
 import { SearchResponse } from '../models/search-response.model';
 import itemsResponse from '../../../assets/response.json';
+import { HttpClient } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class YoutubeService {
-
-  searchItems: SearchResponse = itemsResponse;
+  public searchItems1: any;
   isFormSubmitted: boolean = false;
   isFiltering: boolean = false;
   filterBy: undefined | string = undefined;
   sortOrderViews: undefined | boolean = undefined;
   sortOrderDate: undefined | boolean = undefined;
+
+  constructor(private http: HttpClient) { }
+
+  getItems(inputValue: string) {
+    return this.http.get(inputValue).pipe(
+      catchError((err) => {
+        console.error(err);
+        throw err;
+      }
+      )
+    );
+  }
+
+  changeSearchItems(items: any) {
+    this.searchItems1 = items.items;
+  }
 
   formSubmitted() {
     if (!this.isFormSubmitted) { this.isFormSubmitted = true; }
