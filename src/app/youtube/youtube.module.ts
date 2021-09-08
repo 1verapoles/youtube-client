@@ -14,7 +14,6 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 import { DetailsComponent } from './components/details/details.component';
 import { Border2Directive } from './directives/border2.directive';
 
-
 @NgModule({
   declarations: [
     YoutubeComponent,

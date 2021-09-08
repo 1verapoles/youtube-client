@@ -21,14 +21,14 @@ export class DetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.store.pipe(map((r: any) => { return [...r.youtube.customCards, ...r.youtube.searchCards]; }))
+    this.store.pipe(map((state: any) => { return [...state.youtube.customCards, ...state.youtube.searchCards]; }))
       .subscribe(arr => {
-        let n = arr.find(el => this.currentSearchItem.id === el.id);
-        if (!n) {
+        let detailsItem = arr.find(el => this.currentSearchItem.id === el.id);
+        if (!detailsItem) {
           this.router.navigate(['/**']);
           return;
         } else {
-          this.currentSearchItem = n;
+          this.currentSearchItem = detailsItem;
         }
       });
   }

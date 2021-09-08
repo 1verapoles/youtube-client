@@ -5,8 +5,6 @@ import { CoreModule } from '../core/core.module';
 import { AdminComponent } from './admin/admin.component';
 import { YoutubeModule } from '../youtube/youtube.module';
 
-
-
 @NgModule({
   declarations: [
     AdminComponent

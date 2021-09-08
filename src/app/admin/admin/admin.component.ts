@@ -25,7 +25,7 @@ export class AdminComponent {
     this.description = form.value.description?.trim();
     this.img = form.value.img?.trim();
     this.video = form.value.video?.trim();
-    let date: string = new Date().toISOString();
+    const date: string = new Date().toISOString();
 
     if (this.title && this.description && this.img && this.video) {
       this.store.dispatch(addCustomCard({ title: this.title, description: this.description, img: this.img, video: this.video, date: date, id: uuidv4() }));
