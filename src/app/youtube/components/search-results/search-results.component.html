@@ -1,4 +1,4 @@
-      <app-search-item *ngFor="let item of youtubeService.searchItems1 | filterItems : filterBy | sortDate : sortOrderDate | sortViews : sortOrderViews" 
+      <app-search-item *ngFor="let item of searchItems1 | async | filterItems : filterBy | sortDate : sortOrderDate | sortViews : sortOrderViews" 
       [currentSearchItem]="item"
       [appBorder]="item.snippet.publishedAt"></app-search-item>
         

@@ -9,7 +9,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class YoutubeService {
-  public searchItems1: any;
   isFormSubmitted: boolean = false;
   isFiltering: boolean = false;
   filterBy: undefined | string = undefined;
@@ -26,10 +25,6 @@ export class YoutubeService {
       }
       )
     );
-  }
-
-  changeSearchItems(items: any) {
-    this.searchItems1 = items.items;
   }
 
   formSubmitted() {
